@@ -1,0 +1,42 @@
+<!-- Doctype (ドクタイプ) 宣言 html ファイルがどのversionか示す -->
+<!DOCTYPE html>
+<!-- 日本語の文章だと宣言 -->
+<html lang="ja">
+    <head>
+        <!-- 文字コード -->
+        <meta charset="UTF-8">
+        <!-- ブラウザーのタブに表示される -->
+        <title>人時計算</title> 
+        <!-- ページの説明文，検索エンジンやSNS でシェアしたときに表示 -->
+        <meta name="description" content="Man-hour calculation">
+        <!-- デバイスの横幅にあわせて表示 -->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- リセットCSS どのブラウザみても同じようにデフォルトのデザインをリセット -->
+        <link rel="stylesheet" href="css/destyle.css">
+        
+        
+
+        <link rel="stylesheet" href="css/style.css">
+
+
+    </head>
+    <body>  
+    			<h1 class="title">人時計算</h1>
+          
+             　　作業名  　　人数　時間　(h) ＝　人時
+            <form oninput="result.value = Math.round(Number(num.value) * Number(hour.value))">
+              
+              <p>
+              1. <input type="text" name="name" name="num" value=""  class="haba_txt">
+              ：
+              <input type="number" name="num" value="0"  class="haba"> × 
+              <input type="number" name="hour" value="0" class="haba">　  = 
+                <output name="result"><b>0</b></output>人時
+              </p>
+              </form>
+            
+  
+    </body>
+
+</html>

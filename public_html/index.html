@@ -1,0 +1,83 @@
+<!-- Doctype (ドクタイプ) 宣言 html ファイルがどのversionか示す -->
+<!DOCTYPE html>
+<!-- 日本語の文章だと宣言 -->
+<html lang="ja">
+    <head>
+        <!-- 文字コード -->
+        <meta charset="UTF-8">
+        <!-- ブラウザーのタブに表示される -->
+        <title>人時計算</title> 
+        <!-- ページの説明文，検索エンジンやSNS でシェアしたときに表示 -->
+        <meta name="description" content="Man-hour calculation">
+        <!-- デバイスの横幅にあわせて表示 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- リセットCSS どのブラウザみても同じようにデフォルトのデザインをリセット -->
+        <link rel="stylesheet" href="css/destyle.css">
+        
+        
+
+        <link rel="stylesheet" href="css/style.css">
+
+
+    </head>
+    <body>  
+    			<h1 class="title">人時計算</h1>
+          <form style="
+          width: 360px;
+          background: #eeeeee;
+          padding: 10px;
+          text-align: center;
+        ">
+        <p>
+        何人で？：<input type="text" id="num" style="
+          width: 70px;
+          text-align: right;
+        ">（人）
+        </p>
+        <span id="msg1" style="color: #ff0000;"></span>
+        <p>
+        何時間？：<input type="text" id="hour" style="
+          width: 70px;
+          text-align: right;
+        ">（時）
+        </p>
+        <span id="msg2" style="color: #ff0000;"></span>
+        <p>
+        <input type="button" value="人時計算" onclick="man_hour_cal();" style="
+          width: 100px;
+          height: 50px;
+          font-size: 15px;
+        ">
+        </p>
+        <span id="msg3"></span>
+        <noscript>
+        このブラウザはスクリプトが実行しないように制限されています。
+        </noscript>
+        </form>
+
+    		<script type="text/javascript">
+          function man_hour_cal() {
+            var nu = document.getElementById("num").value;
+            var ho = document.getElementById("hour").value;
+            var man_hour = nu*ho;
+            if (Number.isFinite(1 / nu)) {
+              document.getElementById("msg1").innerHTML = ''; 
+            } else {
+              document.getElementById("msg1").innerHTML = '人数が入力されていません';
+            }
+            if (Number.isFinite(1 / ho)){
+              document.getElementById("msg2").innerHTML = ''; 
+            } else {
+              document.getElementById("msg2").innerHTML = '時間が入力されていません';
+            }
+            if (nu * ho > 0){
+              document.getElementById("msg3").innerHTML = '人時 = ' + man_hour; 
+            } else {
+              document.getElementById("msg3").innerHTML = '';
+            }
+          }
+          </script>
+
+    </body>
+
+</html>
