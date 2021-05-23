@@ -21,6 +21,9 @@
         <link rel="stylesheet" href="css/style.css">
 
         <script type="text/javascript">
+        
+   
+ 
           function appendToTable() {
               var $formObject = document.getElementById( "sampleForm" );
               var $tableObject = document.getElementById( "sampleTable" );
@@ -30,12 +33,17 @@
               $tr += "<td>" + $formObject.formAge.value + "</td>";
               $tr += "<td>" + $formObject.manresult.value + "</td>";
               $tr += "<td>" + $formObject.formComent.value + "</td>";
-              $tr += "</tr>";
+
               $tableObject.insertAdjacentHTML( "beforeend", $tr );
+
           }
+          
 
-          </script>
+          
+        </script>
 
+        
+           
 
           <style>
             #wrapSampleForm {
@@ -80,6 +88,8 @@
             }
             </style>
 
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css"/>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 
     </head>
     <body>  
@@ -98,14 +108,19 @@
                 時間：
                 <input type="number" name="formAge">(h)
                 <br />
-                人時
+                人時：
                 <output name="manresult"><b>0</b></output>人時
                 <br />
                 備考：
                 <textarea name="formComent"></textarea>
                 <br />
+                
+                
+                
+                
             </form>
             <button onclick="appendToTable()">追加</button>
+            
         </div>
 
         <table id="sampleTable">
@@ -118,6 +133,38 @@
                 
             </tr>
         </table>
+
+        <div>
+            <canvas id="myChart" style="border: solid 1px; width: 500px; height: 500px"></canvas>
+          </div>
+          
+          <script>
+          // グラフのタイプとか値とかを設定
+          let config = {
+              type: "pie",
+              data: {
+                  labels: [formName.value, "au", "softbank", "other"],
+                  datasets: [{
+                      data: [39.9, 27.4, 22.3, 10.4],
+                      backgroundColor: [
+                          "rgb(255, 99, 132)",
+                          "rgb(255, 159, 64)",
+                          "rgb(240, 240, 240)",
+                          "rgb(54, 162, 235)"
+                      ]
+                  }],
+              },
+              options: {
+                  responsive: false
+              }
+          };
+          
+          // チャートの生成
+          window.addEventListener("load", function() {
+              let ctx = document.getElementById("myChart").getContext("2d");
+              myChart = new Chart(ctx, config);
+          }, false);
+          </script>
   
     </body>
 
