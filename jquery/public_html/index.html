@@ -1,0 +1,92 @@
+<!-- Doctype (ドクタイプ) 宣言 html ファイルがどのversionか示す -->
+<!DOCTYPE html>
+<!-- 日本語の文章だと宣言 -->
+<html lang="ja">
+    <head>
+        <!-- 文字コード -->
+        <meta charset="UTF-8">
+        <!-- ブラウザーのタブに表示される -->
+        <title>人時計算</title> 
+        <!-- ページの説明文，検索エンジンやSNS でシェアしたときに表示 -->
+        <meta name="description" content="Man-hour calculation">
+        <!-- デバイスの横幅にあわせて表示 -->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- リセットCSS どのブラウザみても同じようにデフォルトのデザインをリセット -->
+        <link rel="stylesheet" href="css/destyle.css">
+        
+        <!-- [参考] -->
+        <!-- 1 http://alphasis.info/2013/12/javascript-gyakubiki-appendtotablefromform/ -->
+        <!-- 2 https://notepad-blog.com/content/123/ -->
+
+        <link rel="stylesheet" href="css/style.css">
+
+        
+        
+      </head>
+      
+      <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        
+        
+        <h1>人時計算</h1>
+        <input type="text" id="sagyou" placeholder="作業名">
+        <input type="text" id="num" placeholder="人数">
+        <input type="text" id="hour" placeholder="時間(h)">
+        <input type="text" id="coment" placeholder="備考">
+        
+        
+        
+        <input type="button" id="add" value="add">
+        <table>
+          <thead>
+            <tr>
+              <th>作業名</th>
+              <th>人数</th>
+              <th>時間(h)</th>
+              <th>人時</th>
+              <th>備考</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!--             
+              <tr>
+                <td>デスクトップPC</td>
+                <td class="price">200000</td>
+              </tr>
+              <tr>
+                <td>モニター</td>
+                <td class="price">50000</td>
+              </tr>
+              <tr>
+                <td>キーボード</td>
+              <td class="price">15000</td>
+            </tr>
+            <tr>
+              <td>マウス</td>
+              <td class="price">6000</td>
+            </tr>
+             <tr>
+               <td>プリンター</td>
+               <td class="price">40000</td>
+            </tr> -->
+          </tbody>
+        </table>
+        <script type="text/javascript" src="./js/jquery.js"></script>
+        
+      
+      <div>
+        <p class="sum_man">合計人時：0</p>
+      </div>
+
+      <!-- <h2>グラフ</h2>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+      <canvas id="myChart"></canvas> -->
+
+      
+    </body>
+      
+      </html>
+      
