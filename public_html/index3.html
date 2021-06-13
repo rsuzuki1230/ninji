@@ -94,9 +94,11 @@
     </head>
     <body>  
     			<h1 class="title">人時計算</h1>
-          
+            
           <div id="wrapSampleForm">
-            <form id="sampleForm" oninput="manresult.value = Math.round(Number(formArea.value) * Number(formAge.value))">
+            <form id="sampleForm" oninput="manresult.value = Number(formArea.value) * Number(formAge.value)">
+
+            
               
                 【入力欄】
                 <br />
@@ -129,43 +131,11 @@
                 <th id="tableArea">人数</th>
                 <th id="tableAge">時間(h)</th>
                 <th id="manresult">人時</th>
-                <th id="tableComent">コメント</th>
+                <th id="tableComent">備考</th>
                 
             </tr>
         </table>
-
-        <div>
-            <canvas id="myChart" style="border: solid 1px; width: 500px; height: 500px"></canvas>
-          </div>
-          
-          <script>
-          // グラフのタイプとか値とかを設定
-          let config = {
-              type: "pie",
-              data: {
-                  labels: [formName.value, "au", "softbank", "other"],
-                  datasets: [{
-                      data: [39.9, 27.4, 22.3, 10.4],
-                      backgroundColor: [
-                          "rgb(255, 99, 132)",
-                          "rgb(255, 159, 64)",
-                          "rgb(240, 240, 240)",
-                          "rgb(54, 162, 235)"
-                      ]
-                  }],
-              },
-              options: {
-                  responsive: false
-              }
-          };
-          
-          // チャートの生成
-          window.addEventListener("load", function() {
-              let ctx = document.getElementById("myChart").getContext("2d");
-              myChart = new Chart(ctx, config);
-          }, false);
-          </script>
-  
-    </body>
+      
+          </body>
 
 </html>
